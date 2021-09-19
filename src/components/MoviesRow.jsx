@@ -1,14 +1,19 @@
 import React from 'react';
-import './style/MoviesRom.css'
+import './style/MoviesRow.css'
 
 function MoviesRow({title, items}) {
   return (
-    <div>
+    <div className="movieRow">
       <h1>{title}</h1>
-      <div className="movieRow--listarea">
+      <div className="movieRow--listearea">
+      <div className="movieRow--list">
         {items.results.length > 0 && items.results.map((item, index) => (
-          <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} key={index} alt={item.original_title}/>
+          <div className="movieRow--item" key={index}>
+
+            <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}  alt={item.original_title}/>
+        </div>
         ))}
+      </div>
       </div>
     </div>
   )
