@@ -8,7 +8,7 @@ const basicFetch = async (endpoint) => {
 }
 
 export default {
-  getHomeList: asybc () => {
+  getHomeList: async () => {
     return [
       {
         slug: 'originals', 
@@ -28,18 +28,27 @@ export default {
       {
         slug: 'action', 
         title: 'Ação',
-        items: await basicFetch(`/trending/all/week?language=pt-BR&api_key=${TOKEN}`)
+        items: await basicFetch(`/discover/movies?with_genres=28&language=pt-BR&api_key=${TOKEN}`)
       },
       {
         slug: 'comedy', 
         title: 'Comedia',
-        items: await basicFetch(`/trending/all/week?language=pt-BR&api_key=${TOKEN}`)
+        items: await basicFetch(`/discover/movies?with_genres=35&language=pt-BR&api_key=${TOKEN}`)
       },
       {
         slug: 'horror', 
         title: 'Terror',
-        items: await basicFetch(`/trending/all/week?language=pt-BR&api_key=${TOKEN}`)
+        items: await basicFetch(`/discover/movies?with_genres=27&language=pt-BR&api_key=${TOKEN}`)
+      },
+      {
+        slug: 'romance', 
+        title: 'Romance',
+        items: await basicFetch(`/discover/movies?with_genres=10749&language=pt-BR&api_key=${TOKEN}`)
+      }, {
+        slug: 'documentary', 
+        title: 'Documentários',
+        items: await basicFetch(`/discover/movies?with_genres=99&language=pt-BR&api_key=${TOKEN}`)
       }
-    ]
+    ];
   }
-}
+};
