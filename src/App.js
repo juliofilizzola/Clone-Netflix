@@ -1,5 +1,6 @@
 import React from 'react';
 import API from './API/api';
+import './style/app.css'
 import MoviesRow from './components/MoviesRow';
 
 function App() {

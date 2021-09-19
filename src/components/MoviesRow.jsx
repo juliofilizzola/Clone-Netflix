@@ -6,8 +6,8 @@ function MoviesRow({title, items}) {
     <div>
       <h1>{title}</h1>
       <div className="movieRow--listarea">
-        {items.results.length > 0 && items.results.map((item, key) => (
-          <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.title}/>
+        {items.results.length > 0 && items.results.map((item, index) => (
+          <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} key={index} alt={item.original_title}/>
         ))}
       </div>
     </div>
