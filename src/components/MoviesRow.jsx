@@ -1,5 +1,5 @@
 import React from 'react';
-import './style/MoviesRow.css'
+import './style/MoviesRow.css';
 
 function MoviesRow({title, items}) {
   return (
@@ -16,7 +16,7 @@ function MoviesRow({title, items}) {
       </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default MoviesRow
+export default MoviesRow;
