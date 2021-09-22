@@ -35,7 +35,9 @@ function FeaturedMovie({ item }) {
             <span className="featured--seasons">{item.number_of_seasons} temporada{item.number_of_seasons >= 2 ? "s" : '' }</span>
           </div>
           <div className="featured--description">{item.overview}</div>
-          <div className="featured--buttons"></div>
+          <div className="featured--buttons">
+            <a href={``}>Assistir</a>
+          </div>
           <div className="featured--genres"><strong>Gêneros:</strong> { genrs.join(', ') } </div>
         </div>
       </div>
