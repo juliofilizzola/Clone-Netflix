@@ -21,6 +21,7 @@ function FeaturedMovie({item}) {
           </div>
           <div className="featured--description">{item.overview}</div>
           <div className="featured--buttons"></div>
+          <div className="featured--genres"><strong>Gêneros:</strong>...</div>
 
         </div>
       </div>
