@@ -1,9 +1,24 @@
 import React from 'react';
-import './style/FeaturedMovie.css'
+import './style/FeaturedMovie.css';
 
-function FeaturedMovie({item}) {
+function FeaturedMovie({ item }) {
+
+  const [genrs, setGenrs] = React.useState([]);
+
+  const getGenrs = () => {
+    let genr = [];
+    for(let i in item.genres) {
+      genr.push( item.genres[i].name );
+    };
+    setGenrs(genr)
+  }
+
+  React.useEffect(() => {
+    getGenrs();
+  }, []);
 
   let firstDate = new Date(item.first_ait_date);
+ 
 
   return (
    <section className="featured" style={{
@@ -21,8 +36,7 @@ function FeaturedMovie({item}) {
           </div>
           <div className="featured--description">{item.overview}</div>
           <div className="featured--buttons"></div>
-          <div className="featured--genres"><strong>Gêneros:</strong>...</div>
-
+          <div className="featured--genres"><strong>Gêneros:</strong> { genrs.join(', ') } </div>
         </div>
       </div>
    </section>
