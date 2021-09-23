@@ -36,7 +36,9 @@ function FeaturedMovie({ item }) {
           </div>
           <div className="featured--description">{item.overview}</div>
           <div className="featured--buttons">
-            <a href={``}>Assistir</a>
+            <a href={`/watch/${item.id}`}> ⏩ Assistir</a>
+            <a href={`/list/add/${item.id}`}> ➕ Assistir</a>
+
           </div>
           <div className="featured--genres"><strong>Gêneros:</strong> { genrs.join(', ') } </div>
         </div>
