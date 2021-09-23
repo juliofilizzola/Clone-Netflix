@@ -17,7 +17,7 @@ function FeaturedMovie({ item }) {
     getGenrs();
   }, []);
 
-  let firstDate = new Date(item.first_ait_date);
+  let firstDate = new Date(item.first_air_date);
  
 
   return (
@@ -36,8 +36,8 @@ function FeaturedMovie({ item }) {
           </div>
           <div className="featured--description">{item.overview}</div>
           <div className="featured--buttons">
-            <a href={`/watch/${item.id}`}> ⏩ Assistir</a>
-            <a href={`/list/add/${item.id}`}> ➕ Assistir</a>
+            <a href={`/watch/${item.id}`} className="featured--watchButton"> ⏩ Assistir</a>
+            <a href={`/list/add/${item.id}`} className="featured--myListButton"> ➕ Assistir</a>
 
           </div>
           <div className="featured--genres"><strong>Gêneros:</strong> { genrs.join(', ') } </div>
