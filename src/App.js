@@ -8,6 +8,7 @@ import Header from './components/Header';
 function App() {
   const [movieList, setMovieList] = React.useState([]);
   const [featuredData, setFeaturedData] = React.useState(null);
+  const [blackHeader, setBlackHeader] = React.useState(false);
 
   React.useEffect(() => {
     const loadAll = async () => {
@@ -21,10 +22,25 @@ function App() {
     };
     loadAll();
   }, []);
+
+  React.useEffect(() => {
+    const scrollListener = () => {
+      if(window.scrollY > 200) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    };
+
+    window.addEventListener('scroll', scrollListener);
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  })
   
   return (
     <div className="page">
-      <Header />
+      <Header blackHeader={ blackHeader } />
       {featuredData && <FeaturedMovie item={featuredData} />}
       <section className="lists">
         {movieList.map((mov, index) => (

@@ -9,6 +9,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
+  background: transparent;
+}
+
+.blackHeader {
+  background-color: #111;
 }
 
 .header--logo {
