@@ -4,6 +4,7 @@ import './style/app.css'
 import MoviesRow from './components/MoviesRow';
 import FeaturedMovie from './components/FeaturedMovie';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   const [movieList, setMovieList] = React.useState([]);
@@ -49,6 +50,7 @@ function App() {
           </div>
         ))}
       </section>
+      <Footer />
     </div>
   );
 }
