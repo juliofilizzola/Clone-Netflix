@@ -3,6 +3,7 @@ import API from './API/api';
 import './style/app.css'
 import MoviesRow from './components/MoviesRow';
 import FeaturedMovie from './components/FeaturedMovie';
+import Header from './components/Header';
 
 function App() {
   const [movieList, setMovieList] = React.useState([]);
@@ -23,6 +24,7 @@ function App() {
   
   return (
     <div className="page">
+      <Header />
       {featuredData && <FeaturedMovie item={featuredData} />}
       <section className="lists">
         {movieList.map((mov, index) => (
@@ -31,9 +33,6 @@ function App() {
           </div>
         ))}
       </section>
-
-    
-
     </div>
   );
 }
