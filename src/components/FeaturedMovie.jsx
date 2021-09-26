@@ -3,14 +3,12 @@ import './style/FeaturedMovie.css';
 
 function FeaturedMovie({ item }) {
 
-  const [genrs, setGenrs] = React.useState([]);
 
+  let genrs = [];
   const getGenrs = () => {
-    let genr = [];
     for(let i in item.genres) {
-      genr.push( item.genres[i].name );
+      genrs.push( item.genres[i].name );
     };
-    setGenrs(genr)
   }
 
   React.useEffect(() => {

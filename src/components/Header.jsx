@@ -4,9 +4,8 @@ import LogoNetflix from "./img/netflixLogo.png";
 import "./style/header.css";
 
 const Header = ({ blackHeader }) => {
-  console.log(blackHeader);
   return (
-    <header className={blackHeader && 'blackHeader'}>
+    <header className={blackHeader ? 'blackHeader' : ''}>
       <div className="header--logo">
         <a href="/">
           <img src={ LogoNetflix } alt="Logo da Netflix"/>

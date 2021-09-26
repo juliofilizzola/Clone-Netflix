@@ -1,5 +1,5 @@
 import React from 'react';
-import API from './API/api';
+import {getHomeList, getMovieInfo} from './API/api';
 import './style/app.css'
 import MoviesRow from './components/MoviesRow';
 import FeaturedMovie from './components/FeaturedMovie';
@@ -11,18 +11,19 @@ function App() {
   const [featuredData, setFeaturedData] = React.useState(null);
   const [blackHeader, setBlackHeader] = React.useState(false);
 
+  
   React.useEffect(() => {
     const loadAll = async () => {
-      let list = await API.getHomeList();
+      let list = await getHomeList();
       setMovieList(list);
       let originals = list.filter((item) => item.slug === "originals");
       let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length - 1));
       let chosen = originals[0].items.results[randomChosen];
-      let chosenInfo = await API.getMovieInfo(chosen.id, 'tv');
+      let chosenInfo = await getMovieInfo(chosen.id, 'tv');
       setFeaturedData(chosenInfo)
     };
     loadAll();
-  });
+  }, []);
 
   React.useEffect(() => {
     const scrollListener = () => {
@@ -44,7 +45,7 @@ function App() {
       <Header blackHeader={ blackHeader } />
       {featuredData && <FeaturedMovie item={featuredData} />}
       <section className="lists">
-        {movieList.map((mov, index) => (
+        {movieList && movieList.map((mov, index) => (
           <div key={index}>
               <MoviesRow title={mov.title} items={mov.items}/>
           </div>
