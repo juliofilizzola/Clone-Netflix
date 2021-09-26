@@ -1,9 +1,20 @@
 import React from 'react';
-import './style/FeaturedMovie.css'
+import './style/FeaturedMovie.css';
 
-function FeaturedMovie({item}) {
+function FeaturedMovie({ item }) {
+  let genrs = [];
+  const getGenrs = () => {
+    for(let i in item.genres) {
+      genrs.push( item.genres[i].name );
+    };
+  }
 
-  let firstDate = new Date(item.first_ait_date);
+  React.useEffect(() => {
+    getGenrs();
+  });
+
+  let firstDate = new Date(item.first_air_date);
+ 
 
   return (
    <section className="featured" style={{
@@ -20,8 +31,12 @@ function FeaturedMovie({item}) {
             <span className="featured--seasons">{item.number_of_seasons} temporada{item.number_of_seasons >= 2 ? "s" : '' }</span>
           </div>
           <div className="featured--description">{item.overview}</div>
-          <div className="featured--buttons"></div>
+          <div className="featured--buttons">
+            <a href={`/watch/${item.id}`} className="featured--watchButton"> ⏩ Assistir</a>
+            <a href={`/list/add/${item.id}`} className="featured--myListButton"> ➕ Assistir</a>
 
+          </div>
+          <div className="featured--genres"><strong>Gêneros:</strong> { genrs.length > 0 && genrs.join(", ") } </div>
         </div>
       </div>
    </section>
