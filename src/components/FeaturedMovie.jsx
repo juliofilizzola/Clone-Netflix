@@ -2,8 +2,6 @@ import React from 'react';
 import './style/FeaturedMovie.css';
 
 function FeaturedMovie({ item }) {
-
-
   let genrs = [];
   const getGenrs = () => {
     for(let i in item.genres) {
@@ -38,7 +36,7 @@ function FeaturedMovie({ item }) {
             <a href={`/list/add/${item.id}`} className="featured--myListButton"> ➕ Assistir</a>
 
           </div>
-          <div className="featured--genres"><strong>Gêneros:</strong> { genrs.join(', ') } </div>
+          <div className="featured--genres"><strong>Gêneros:</strong> { genrs.length > 0 && genrs.join(", ") } </div>
         </div>
       </div>
    </section>
