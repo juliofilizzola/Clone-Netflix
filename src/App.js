@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
-  const [movieList, setMovieList] = React.useState([]);
+  const [movieList, setMovieList] = React.useState();
   const [featuredData, setFeaturedData] = React.useState(null);
   const [blackHeader, setBlackHeader] = React.useState(false);
 
