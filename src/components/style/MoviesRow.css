@@ -1,21 +1,26 @@
 .movieRow {
   margin-bottom: 30px;
 }
+
 .movieRow h1 {
   margin: 0px 0px 0px 30px;
 }
+
 .movieRow--listearea {
   overflow-x: hidden; 
   padding-left: 30px; 
 }
+
 .movieRow--list {
-  width: 99999999px;
+  transition: all ease 0.5s;
 }
+
 .movieRow--item {
   display: inline-block;
   width: 150px;
   cursor: pointer;
 }
+
 .movieRow--item img {
   width: 100%;
   transform: scale(0.9);
@@ -35,9 +40,10 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: rgb(0, 0, 0, 0.8);
+  background: rgb(0, 0, 0, 0.3);
   opacity: 0;
   cursor: pointer;
+  transition: all ease 0.5s;
 }
 
 .movieRow--left {
@@ -48,8 +54,8 @@
   right: 0;
 }
 
-.movieRow:hover .movieRow--left:hover,
-.movieRow:hover .movieRow--right:hover  {
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right  {
   opacity: 1;
 }
 
