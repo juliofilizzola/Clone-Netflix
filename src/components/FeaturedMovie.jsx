@@ -15,7 +15,7 @@ function FeaturedMovie({ item }) {
 
   React.useEffect(() => {
     getGenrs();
-  }, []);
+  });
 
   let firstDate = new Date(item.first_air_date);
  
