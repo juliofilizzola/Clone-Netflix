@@ -16,7 +16,10 @@ function MoviesRow({title, items}) {
 
   const handleRightArrow = () => {
     let valueScrollX = scrollX - Math.round(window.innerWidth / 2);
-    // let list
+    let listRow = items.results.length * 150;
+    if ((window.innerWidth - listRow) > valueScrollX ) {
+      valueScrollX = (window.innerWidth - listRow) - 60;
+    }
     setScrollX(valueScrollX);
   };
 
