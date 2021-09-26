@@ -22,7 +22,7 @@ function App() {
       setFeaturedData(chosenInfo)
     };
     loadAll();
-  }, []);
+  });
 
   React.useEffect(() => {
     const scrollListener = () => {

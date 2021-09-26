@@ -7,16 +7,16 @@ function MoviesRow({title, items}) {
   const [scrollX, setScrollX] = React.useState(-400)
 
   const handleLeftArrow = () => {
-      let valueScrollX = scrollX + Math.round(window.innerWidth / 2);
-      if (valueScrollX > 0) {
-        valueScrollX = 0;
-      };
-      setScrollX(valueScrollX);
+    let valueScrollX = scrollX + Math.round(window.innerWidth / 2);
+    if (valueScrollX > 0) {
+      valueScrollX = 0;
+    };
+    setScrollX(valueScrollX);
   };
 
   const handleRightArrow = () => {
     let valueScrollX = scrollX - Math.round(window.innerWidth / 2);
-    let list
+    // let list
     setScrollX(valueScrollX);
   };
 
